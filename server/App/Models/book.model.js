@@ -1,18 +1,21 @@
+
+
 module.exports = (sequelize, DataTypes)=>{
   const Author = sequelize.define('Author', {
-    authid: {
+    authorid: {
       allowNull: false,
       type: DataTypes.INTEGER,
       autoIncrement:true,
       primaryKey: true
     },
-    fName: {
+    firstName: {
       type: DataTypes.STRING
     },
-    lName: {
+    lastName: {
       type: DataTypes.STRING
     },
-  });
+  },
+  );
   return Author;
 };
 
@@ -25,37 +28,23 @@ module.exports = (sequelize, DataTypes)=>{
       primaryKey: true
     },
     title: {
-     
       type: DataTypes.STRING
     },
     description: {
-    
       type: DataTypes.STRING
     },
     pubdate: {
-    
       type: DataTypes.DATE
     },
     pubid: {
-     
       type: DataTypes.BOOLEAN
     },
-    authid: {
-     
+    authorid: {
       type: DataTypes.BOOLEAN
     },
     cost: {
       type: DataTypes.BOOLEAN
     },
-      timestamps: true,
-      classMethods: {
-      associate: function (models) {
-        Book.hasMany(models.Author, { as: 'authid', foreignKey :'authid' });
-      },
-      associate: function (models) {
-        Book.hasMany(models.Publisher, { as: 'pubid', foreignKey : 'pubid' });
-      }
-    }
   });
   return Book;
 };

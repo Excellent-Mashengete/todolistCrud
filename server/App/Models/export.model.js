@@ -5,5 +5,10 @@ const sequelize = new Sequelize(dbConfig.connectionString.DB, dbConfig.connectio
     dialect: dbConfig.connectionString.DIALECT /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
 });
 //DB Connection testing
-
+// const db ={};
+// db.Sequelize = Sequelize;
+// db.sequelize = sequelize;
+// db.Publisher = 
+// db.Book = 
+// db.Author = 
 module.exports = sequelize;
